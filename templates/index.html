@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMeans Clustering Visualization</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    #chartContainer {
+      margin-top: auto;
+      /* Pushes the chart to the bottom */
+      width: 400px;
+      /* Set a fixed width for the chart */
+      height: 400px;
+      /* Set a fixed height for the chart */
+    }
+
+    #plotly-div {
+      margin-top: auto;
+      /* Pushes the plot to the bottom */
+      width: 400px;
+      /* Set a fixed width for the plot */
+      height: 400px;
+      /* Set a fixed height for the plot */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>KMeans Clustering Visualization</h1>
+  <select id="initMethod">
+    <option value="random">Random</option>
+    <option value="farthest_first">Farthest First</option>
+    <option value="kmeans++">KMeans++</option>
+    <option value="manual">Manual</option>
+  </select>
+  <input type="number" id="nClusters" placeholder="Number of Clusters" />
+  <button id="generateData">Generate Data</button>
+  <button id="runKMeans">Run KMeans</button>
+  <button id="runToConvergence">Run to Convergence</button>
+
+  <div class="matplot">
+    <img id="data-visualization" alt="Data Visualization" style="display:none;">
+    <div id="plotly-div" style="display:none;"></div>
+  </div>
+
+  <script src="../static/script.js"></script>
+</body>
+
+</html>
